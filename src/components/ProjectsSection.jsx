@@ -1,12 +1,16 @@
-import { ArrowRight, Github, Sparkles } from "lucide-react";
+import { ArrowRight, Github } from "lucide-react";
+
+import chefManiaImage from "./assets/chef_Mania_backgroud.png";
+import dineFlowImage from "./assets/dineFlowLogo.png";
+import chatGPTImage from "./assets/ChatGPT.jpg";
 
 const projects = [
   {
     id: 1,
-    title: "Chef Mania -Strategic Web Game",
+    title: "Chef Mania - Strategic Web Game",
     description:
       "Built competitive AI opponents using minimax algorithm with alpha-beta pruning. Full-stack game with React frontend and Java Spring Boot backend.",
-    image: "src/assets/chef_Mania_backgroud.png",
+    image: chefManiaImage,
     tags: [
       "React",
       "Java",
@@ -22,7 +26,7 @@ const projects = [
     title: "DineFlow - Restaurant Management System",
     description:
       "Complete restaurant management platform with QR code ordering, real-time notifications, and role-based authentication for actual restaurant operations.",
-    image: "src/assets/dineFlowLogo.png",
+    image: dineFlowImage,
     tags: ["React", "Spring Boot", "MySQL", "AWS", "JWT", "WebSockets"],
     githubUrl: "https://github.com/Spacecraft134/DineFlow",
   },
@@ -31,7 +35,7 @@ const projects = [
     title: "BadgerChatGPT",
     description:
       "Multi-persona chat interface built with React that streams AI responses in real-time using CS571's AI API (OpenAI GPT-4o mini wrapper). Supports persona switching and localStorage persistence.",
-    image: "src/assets/ChatGPT.jpg",
+    image: chatGPTImage,
     tags: [
       "React",
       "AI",
