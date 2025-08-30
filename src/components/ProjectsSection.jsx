@@ -1,109 +1,132 @@
-import { ArrowRight, ExternalLink, Github } from "lucide-react";
+import { ArrowRight, Github, Sparkles } from "lucide-react";
 
 const projects = [
   {
     id: 1,
-    title: "SaaS Landing Page",
-    description: "A beautiful landing page app using React and Tailwind.",
-    image: "/projects/project1.png",
-    tags: ["React", "TailwindCSS", "Supabase"],
-    demoUrl: "#",
-    githubUrl: "#",
+    title: "Chef Mania -Strategic Web Game",
+    description:
+      "Built competitive AI opponents using minimax algorithm with alpha-beta pruning. Full-stack game with React frontend and Java Spring Boot backend.",
+    image: "src/assets/chef_Mania_backgroud.png",
+    tags: [
+      "React",
+      "Java",
+      "Spring Boot",
+      "Minimax Algorithm",
+      "Alpha-Beta Pruning",
+      "Firebase Auth",
+    ],
+    githubUrl: "https://github.com/NiharSrikakolapu3/Chef_Mania",
   },
   {
     id: 2,
-    title: "Orbit Analytics Dashboard",
+    title: "DineFlow - Restaurant Management System",
     description:
-      "Interactive analytics dashboard with data visualization and filtering capabilities.",
-    image: "/projects/project2.png",
-    tags: ["TypeScript", "D3.js", "Next.js"],
-    demoUrl: "#",
-    githubUrl: "#",
+      "Complete restaurant management platform with QR code ordering, real-time notifications, and role-based authentication for actual restaurant operations.",
+    image: "src/assets/dineFlowLogo.png",
+    tags: ["React", "Spring Boot", "MySQL", "AWS", "JWT", "WebSockets"],
+    githubUrl: "https://github.com/Spacecraft134/DineFlow",
   },
   {
     id: 3,
-    title: "E-commerce Platform",
+    title: "BadgerChatGPT",
     description:
-      "Full-featured e-commerce platform with user authentication and payment processing.",
-    image: "/projects/project3.png",
-    tags: ["React", "Node.js", "Stripe"],
-    demoUrl: "#",
-    githubUrl: "#",
+      "Multi-persona chat interface built with React that streams AI responses in real-time using CS571's AI API (OpenAI GPT-4o mini wrapper). Supports persona switching and localStorage persistence.",
+    image: "src/assets/ChatGPT.jpg",
+    tags: [
+      "React",
+      "AI",
+      "GPT-4o Mini",
+      "Streaming",
+      "Personas",
+      "localStorage",
+    ],
+    githubUrl: "https://github.com/Spacecraft134/BadgerChatGPT-AI-",
   },
 ];
 
 export const ProjectsSection = () => {
   return (
     <section id="projects" className="py-24 px-4 relative">
-      <div className="container mx-auto max-w-5xl">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-          {" "}
-          Featured <span className="text-primary"> Projects </span>
-        </h2>
+      <div className="container mx-auto max-w-6xl relative z-10">
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent">
+            Featured Projects
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-primary to-primary/50 mx-auto mb-6"></div>
+          <p className="text-foreground/70 text-lg max-w-3xl mx-auto leading-relaxed">
+            Here are some of my recent projects!
+          </p>
+        </div>
 
-        <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          Here are some of my recent projects. Each project was carefully
-          crafted with attention to detail, performance, and user experience.
-        </p>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, key) => (
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+          {projects.map((project, index) => (
             <div
-              key={key}
-              className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover"
+              key={project.id}
+              className="group bg-card border border-border rounded-2xl overflow-hidden hover:shadow-xl hover:border-primary/30 transition-all duration-500 hover:-translate-y-2"
+              style={{
+                animationDelay: `${index * 200}ms`,
+                animation: "fade-in 0.6s ease-out forwards",
+              }}
             >
-              <div className="h-48 overflow-hidden">
+              <div className="h-48 overflow-hidden bg-gradient-to-br from-primary/10 to-primary/5 relative">
                 <img
                   src={project.image}
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent"></div>
               </div>
 
               <div className="p-6">
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag) => (
-                    <span className="px-2 py-1 text-xs font-medium border rounded-full bg-secondary text-secondary-foreground">
+                <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
+                  {project.title}
+                </h3>
+
+                <p className="text-foreground/70 text-sm mb-4 leading-relaxed">
+                  {project.description}
+                </p>
+
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {project.tags.map((tag, tagIndex) => (
+                    <span
+                      key={tagIndex}
+                      className="px-3 py-1 text-xs font-medium bg-primary/10 text-primary border border-primary/20 rounded-full"
+                    >
                       {tag}
                     </span>
                   ))}
                 </div>
 
-                <h3 className="text-xl font-semibold mb-1"> {project.title}</h3>
-                <p className="text-muted-foreground text-sm mb-4">
-                  {project.description}
-                </p>
-                <div className="flex justify-between items-center">
-                  <div className="flex space-x-3">
-                    <a
-                      href={project.demoUrl}
-                      target="_blank"
-                      className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                    >
-                      <ExternalLink size={20} />
-                    </a>
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                    >
-                      <Github size={20} />
-                    </a>
-                  </div>
+                <div className="flex justify-end pt-4 border-t border-border">
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium bg-primary/10 text-primary border border-primary/20 rounded-lg hover:bg-primary/20 transition-all duration-300"
+                  >
+                    <Github className="h-4 w-4" />
+                    View Source Code
+                  </a>
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <a
-            className="cosmic-button w-fit flex items-center mx-auto gap-2"
-            target="_blank"
-            href="https://github.com/machadop1407"
-          >
-            Check My Github <ArrowRight size={16} />
-          </a>
+        <div className="text-center mt-16">
+          <div className="inline-flex flex-col items-center gap-4">
+            <p className="text-foreground/70">Want to see more of my work?</p>
+            <a
+              className="group inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground font-semibold rounded-full hover:shadow-lg hover:shadow-primary/25 transition-all duration-300 hover:scale-105 active:scale-95"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://github.com/Spacecraft134?tab=repositories"
+            >
+              <Github className="h-5 w-5" />
+              Check My Github
+              <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+            </a>
+          </div>
         </div>
       </div>
     </section>

@@ -6,6 +6,7 @@ const navItems = [
   { name: "Home", href: "#hero" },
   { name: "About", href: "#about" },
   { name: "Skills", href: "#skills" },
+  { name: "Experiences", href: "#experience" },
   { name: "Projects", href: "#projects" },
   { name: "Contact", href: "#contact" },
 ];
@@ -35,12 +36,11 @@ export const Navbar = () => {
           href="#hero"
         >
           <span className="relative z-10">
-            <span className="text-glow text-foreground"> PedroTech </span>{" "}
-            Portfolio
+            <span className="text-glow text-foreground"> Rohith </span>{" "}
+            Ravikumar
           </span>
         </a>
 
-        {/* desktop nav */}
         <div className="hidden md:flex space-x-8">
           {navItems.map((item, key) => (
             <a
@@ -52,8 +52,6 @@ export const Navbar = () => {
             </a>
           ))}
         </div>
-
-        {/* mobile nav */}
 
         <button
           onClick={() => setIsMenuOpen((prev) => !prev)}
