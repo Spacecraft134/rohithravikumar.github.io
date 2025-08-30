@@ -1,8 +1,8 @@
 import { ArrowRight, Github } from "lucide-react";
 
-import chefManiaImage from "./assets/chef_Mania_backgroud.png";
-import dineFlowImage from "./assets/dineFlowLogo.png";
-import chatGPTImage from "./assets/ChatGPT.jpg";
+import chefManiaImage from "../assets/chef_Mania_backgroud.png";
+import dineFlowImage from "../assets/dineFlowLogo.png";
+import chatGPTImage from "../assets/ChatGPT.jpg";
 
 const projects = [
   {
